@@ -1,0 +1,33 @@
+---
+title: "Lab 1: Building a Data Pipeline"
+author: "Rafi Alim"
+date: "January 29, 2023"
+format: html
+editor: visual
+bibliography: references.bib
+csl: modern-language-association-8th-edition.csl
+toc: true
+---
+
+# *Population Change Analysis*
+
+## Summary
+
+For this first lab, we analyze the changes of population for different Chicago neighborhoods between the years 2010 and 2020. We see that neighborhoods such as the Near North Side, the Near West Side, and Hyde Park grew overall in population. Others, such as Roseland and South Chicago actually shrank in population over the same period of time.[^1]
+
+[^1]: Evident by change in both numerical population and population percent change over the given period of time.
+
+## Graphs
+
+![Graphical representation of percent change in population based on data from ReferencesCCAProfiles20162020 file.](output/Updated%20Population%20Change.png)
+
+## Tables
+
+## Reference Examples
+
+[@kling2007experimental] is my first source, and it is from an article in a scholarly journal. My second source, [@rohde_2022], is from a website that I did not find to be very helpful. The book source that I just to sample here to practice references is [@voelker2022managing], and it was one of the most recent texts that I could find from a quick Google search.
+
+    iv) Produce a table that lists the names and percentage population change for those community areas with an increase in population of more than 10 percent.
+    v) Produce a table that lists the names and percentage population change for those community areas with an decrease in population of more than 10 percent.
+
+4.  In this Quarto Markdown document, use your visualization and two tables to write a short summary of population change for Chicago Community Areas.
