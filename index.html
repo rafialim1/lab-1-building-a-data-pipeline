@@ -1,0 +1,62 @@
+---
+title: "Lab 1: Building a Data Pipeline"
+author: "Rafi Alim"
+date: "January 29, 2023"
+format: html
+editor: visual
+bibliography: references.bib
+csl: modern-language-association-8th-edition.csl
+toc: true
+execute: 
+  warning: false
+---
+
+# *Population Change Analysis*
+
+## Summary
+
+For this first lab, we analyze the changes of population for different Chicago neighborhoods between the years 2010 and 2020. We see that neighborhoods such as the Near North Side, the Near West Side, and Hyde Park grew overall in population. Others, such as Roseland and South Chicago actually shrank in population over the same period of time.[^1]
+
+[^1]: Evident by change in both numerical population and population percent change over the given period of time.
+
+## Graphs
+
+![Graphical representation of percent change in population based on data from ReferencesCCAProfiles20162020 file.](output/Updated%20Population%20Change.png)
+
+## Tables
+
+```{r, echo=FALSE}
+
+data <- read.csv("data/ReferenceCCAProfiles20162020.csv", header=TRUE)
+library(ggplot2)
+library(tidyverse)
+library(dplyr)
+data$numeric_change <- data$X2020_POP - data$X2010_POP
+data$percent_change <- (data$numeric_change / data$X2010_POP)
+increase_data <- data %>%
+  filter(percent_change > .10)
+increase_data <- increase_data %>%
+  select(GEOG, percent_change)
+increase_data$percent_change <- round(increase_data$percent_change * 100, 2)
+increase_data
+```
+
+```{r, echo=FALSE}
+
+data <- read.csv("data/ReferenceCCAProfiles20162020.csv", header=TRUE)
+library(ggplot2)
+library(tidyverse)
+library(dplyr)
+data$numeric_change <- data$X2020_POP - data$X2010_POP
+data$percent_change <- (data$numeric_change / data$X2010_POP)
+decrease_data <- data %>%
+  filter(percent_change < -0.10)
+decrease_data <- decrease_data %>%
+  select(GEOG, percent_change)
+decrease_data$percent_change <- round(decrease_data$percent_change * 100, 2)
+decrease_data
+```
+
+## Reference Examples
+
+[@kling2007experimental] is my first source, and it is from an article in a scholarly journal. My second source, [@rohde_2022], is from a website that I did not find to be very helpful. The book source that I just to sample here to practice references is [@voelker2022managing], and it was one of the most recent texts that I could find from a quick Google search.
