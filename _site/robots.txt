@@ -1,1 +1,1 @@
-Sitemap: https://a8a00a6c-57c8-4984-a86c-e05048e6157e.netlify.app/sitemap.xml
+Sitemap: https://quartopub.com/sites/rafialim1/lab-1-building-a-data-pipeline/sitemap.xml
